@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Xác Nhận Thanh Toán</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f0f0f0, #fafafa);
+    }
+    .fade-in {
+      animation: fadeIn 1s forwards;
+      opacity: 0;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .container {
+      max-width: 850px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 600px;
+    }
+    th, td {
+      text-align: center;
+      padding: 14px;
+      border-bottom: 1px solid #eee;
+    }
+    th {
+      background: #f7f7f7;
+      color: #555;
+      font-weight: 500;
+    }
+    .product-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      justify-content: center;
+    }
+    .product-img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 4px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .product-img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .product-name {
+      font-weight: 600;
+      color: #333;
+    }
+    .quantity-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .quantity-box button {
+      border: none;
+      background: #eee;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      font-size: 18px;
+      border-radius: 6px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .quantity-box button:hover {
+      background: #ddd;
+      transform: scale(1.05);
+    }
+    .quantity-box input {
+      width: 40px;
+      text-align: center;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      height: 32px;
+    }
+    .highlight {
+      color: #c0392b;
+      font-weight: 600;
+    }
+    .note {
+      margin: 10px 0;
+      color: #888;
+      font-style: italic;
+      font-size: 14px;
+    }
+    .sum-line {
+      margin-top: 15px;
+      text-align: right;
+      font-size: 16px;
+    }
+    .sum-line span {
+      font-weight: 600;
+      color: #2c3e50;
+    }
+    .btn-group {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+    .btn {
+      padding: 14px 24px;
+      border: none;
+      border-radius: 6px;
+      font-size: 15px;
+      cursor: pointer;
+      color: #fff;
+      text-transform: uppercase;
+      transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+      font-weight: 500;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .btn-cart {
+      background: #3498db;
+    }
+    .btn-cart:hover {
+      background: #2980b9;
+    }
+    .btn-buy {
+      background: #2ecc71;
+    }
+    .btn-buy:hover {
+      background: #27ae60;
+    }
+    .popup {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+    .popup-content {
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      max-width: 420px;
+      width: 90%;
+      text-align: center;
+      position: relative;
+      animation: slideDown 0.5s forwards;
+      transform: translateY(-50px);
+      opacity: 0;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    @keyframes slideDown {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    .popup h2 {
+      margin-bottom: 15px;
+      color: #333;
+      font-weight: 600;
+    }
+    .popup p {
+      margin-bottom: 25px;
+      line-height: 1.5;
+    }
+    .popup button {
+      margin-top: 10px;
+    }
+    .popup-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      font-size: 20px;
+      cursor: pointer;
+      border: none;
+      background: none;
+      color: #aaa;
+      transition: color 0.3s, transform 0.3s;
+    }
+    .popup-close:hover {
+      color: #333;
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="container fade-in" id="confirmSection">
+    <h1>Xác Nhận Thanh Toán</h1>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Tên sản phẩm</th>
+            <th>Số Lượng</th>
+            <th>Thành Tiền</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="product-info">
+                <img src="https://picsum.photos/80/80?random=1" class="product-img">
+                <div>
+                  <div class="product-name">Yukata Xanh Rêu Hoa Trắng</div>
+                  <div class="note">Tặng kèm Thắt Lưng</div>
+                  <div class="highlight">690.000 VND</div>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="quantity-box">
+                <button id="decreaseBtn">-</button>
+                <input type="number" value="1" min="1" id="quantityInput">
+                <button id="increaseBtn">+</button>
+              </div>
+            </td>
+            <td class="highlight" id="itemTotal">690.000 VND</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">Chú ý: Giá này chưa bao gồm phí vận chuyển!</div>
+    <div class="sum-line">Số lượng: <span id="totalQuantity">1</span></div>
+    <div class="sum-line">Phí giao hàng: shop sẽ báo sau</div>
+    <div class="sum-line">Thành tiền (tạm tính): <span id="finalTotal">690.000 VND</span></div>
+    <div class="btn-group">
+      <button class="btn btn-cart" id="cartBtn">Giỏ hàng</button>
+      <button class="btn btn-buy" id="buyBtn">Mua hàng</button>
+    </div>
+  </div>
+  <div class="popup" id="popupConfirm">
+    <div class="popup-content">
+      <button class="popup-close" id="popupClose">×</button>
+      <h2>Xác Nhận Đơn Hàng</h2>
+      <p>Bạn có chắc muốn thanh toán đơn hàng với tổng giá trị <span id="popupTotal" class="highlight"></span>?</p>
+      <button class="btn btn-buy" id="confirmPurchase">Xác Nhận</button>
+    </div>
+  </div>
+</body>
+</html>

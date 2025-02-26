@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anime & Cosplay Community</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" 
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+
+  <style>
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(to right, #c04848, #480048);
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    header .logo h1 {
+      font-weight: 600;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      list-style-type: none;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #ffe600;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    #events {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #events h2 {
+      text-align: center;
+      font-size: 1.8rem;
+      color: #480048;
+      margin-bottom: 30px;
+    }
+
+    .timeline {
+      list-style-type: none;
+      position: relative;
+      margin: 0 auto;
+      padding: 0;
+      max-width: 700px;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 0;
+      height: 100%;
+      width: 4px;
+      background: linear-gradient(to bottom, #c04848, #480048);
+      border-radius: 2px;
+    }
+
+    .timeline li {
+      position: relative;
+      margin-bottom: 30px;
+      padding-left: 60px;
+    }
+
+    .timeline li::before {
+      content: '';
+      position: absolute;
+      left: 10px;
+      background-color: #fff;
+      border: 3px solid #480048;
+      border-radius: 50%;
+      height: 20px;
+      width: 20px;
+      top: 0;
+      transform: translateY(5px);
+    }
+
+    .timeline time {
+      display: inline-block;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #480048;
+    }
+
+    .timeline li p {
+      background-color: #f9f9f9;
+      padding: 10px 15px;
+      border-radius: 6px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 5px;
+      font-size: 0.95rem;
+    }
+
+    .timeline li p strong {
+      color: #333;
+    }
+
+    footer {
+      background-color: #480048;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 40px;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .timeline::after {
+        left: 10px;
+      }
+      .timeline li {
+        padding-left: 40px;
+      }
+      .timeline li::before {
+        left: 0;
+      }
+    }
+    .timeline li img {
+  width: 100%;
+  max-width: 600px;
+  display: block;
+  margin: 15px auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <h1>Anime & Cosplay Community</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Trang Chủ</a></li>
+        <li><a href="#forum">Diễn Đàn</a></li>
+        <li><a href="#gallery">Thư Viện Ảnh</a></li>
+        <li><a href="#guides">Hướng Dẫn</a></li>
+        <li><a href="#news">Tin Tức</a></li>
+        <li><a href="#contests">Cuộc Thi</a></li>
+        <li><a href="#shop">Cửa Hàng</a></li>
+        <li><a href="#contact">Liên Hệ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="events">
+        <h2>Sự Kiện Sắp Diễn Ra</h2>
+        <ul class="timeline">
+      
+          <li>
+            <time datetime="2025-03-01">01/03/2025</time>
+            <p><strong>Cuộc thi cosplay mùa xuân 2025</strong> - Địa điểm: Hà Nội, Việt Nam</p>
+            <img src="images/tải xuống.jfif" alt="Hình ảnh Cuộc thi cosplay mùa xuân 2025">
+            <p>
+              Mô tả chi tiết: Đây là sân chơi hoành tráng để bạn thỏa sức sáng tạo và bung lụa với nhân vật mình yêu thích.  
+              Cuộc thi năm nay quy tụ nhiều cosplayer chuyên nghiệp lẫn những “newbie” mới nổi.  
+              Sự kiện sẽ diễn ra trọn một ngày, gồm các hoạt động: trình diễn cosplay trên sân khấu, thi đấu theo nhóm, chấm điểm bởi ban giám khảo uy tín,  
+              và dĩ nhiên không thể thiếu các gian hàng phụ kiện độc đáo. Giải thưởng “Cosplayer xuất sắc nhất” đang chờ bạn rinh về!
+            </p>
+          </li>
+      
+          <li>
+            <time datetime="2025-05-15">15/05/2025</time>
+            <img src="images/tải xuống (1).jfif" alt="Hình ảnh Buổi họp mặt cộng đồng anime">
+            <p><strong>Buổi họp mặt cộng đồng anime</strong> - Địa điểm: TP. Hồ Chí Minh</p>
+            <p>
+              Mô tả chi tiết: Một buổi offline siêu ấm cúng, nơi mọi người tụ họp để chia sẻ đam mê anime, manga và cùng bàn luận về các series hot nhất.  
+              Chúng mình sẽ tổ chức mini game, quiz anime, trao đổi figure, thậm chí “hát karaoke anime” nếu bạn đủ tự tin.  
+              Đừng quên mang theo card visit hay tên tài khoản mạng xã hội để kết nối và tìm những người bạn “đồng chí hướng”!
+            </p>
+          </li>
+      
+          <li>
+            <time datetime="2025-07-20">20/07/2025</time>
+            <img src="images/tải xuống (2).jfif" alt="Hình ảnh Ra mắt anime mới">
+            <p><strong>Ra mắt anime mới: "Hành Trình Của Những Anh Hùng"</strong></p>
+            <p>
+              Mô tả chi tiết: “Hành Trình Của Những Anh Hùng” là bộ anime phiêu lưu - hành động được mong chờ nhất mùa hè.  
+              Tại buổi ra mắt, bạn sẽ được xem trước tập 1, giao lưu với đạo diễn và đội ngũ lồng tiếng, cũng như nhận poster độc quyền giới hạn.  
+              Sự kiện còn có phần ký tặng cho 50 fan đầu tiên đến check-in, nên hãy đến sớm để không bỏ lỡ cơ hội có một-không-hai này!
+            </p>
+          </li>
+      
+          <li>
+            <time datetime="2025-09-10">10/09/2025</time>
+            <img src="images/tải xuống (3).jfif" alt="Hình ảnh Anime Festival 2025">
+            <p><strong>Anime Festival 2025</strong> - Địa điểm: Đà Nẵng, Việt Nam</p>
+            <p>
+              Mô tả chi tiết: Festival tầm cỡ quốc gia, hứa hẹn mang đến bầu không khí cuồng nhiệt với vô vàn hoạt động:  
+              biểu diễn sân khấu cosplay, concert nhạc anime, hội chợ đồ lưu niệm, workshop vẽ manga, và khu ẩm thực “chuẩn Nhật” giữa lòng Đà Nẵng.  
+              Dù bạn là fan cứng hay chỉ mới “chập chững” bước vào thế giới anime, sự kiện này sẽ khiến bạn “cháy” hết mình!
+            </p>
+          </li>
+      
+          <li>
+            <time datetime="2025-11-05">05/11/2025</time>
+            <img src="images/tải xuống (4).jfif" alt="Hình ảnh Cuộc thi vẽ fanart anime">
+            <p><strong>Cuộc thi vẽ fanart anime</strong></p>
+            <p>
+              Mô tả chi tiết: Cơ hội tỏa sáng cho các họa sĩ nghiệp dư lẫn chuyên nghiệp, nơi bạn có thể biến ý tưởng thành những bức fanart ấn tượng.  
+              Chủ đề năm nay là “Anime và Thế giới giả tưởng”, khuyến khích người tham gia sáng tạo hết mình.  
+              Ban giám khảo là các họa sĩ có tiếng, giải thưởng gồm tablet vẽ chuyên dụng, bộ bút vẽ xịn, và cơ hội được đăng tác phẩm trên tạp chí fanart uy tín.
+            </p>
+          </li>
+      
+          <li>
+            <time datetime="2026-01-15">15/01/2026</time>
+            <p><strong>Hội thảo về kỹ thuật cosplay</strong></p>
+            <p>
+              Mô tả chi tiết: Bạn mê cosplay nhưng gặp khó khăn về may trang phục, làm props hay trang điểm nhân vật?  
+              Hội thảo này quy tụ nhiều cosplayer kỳ cựu sẽ chia sẻ bí kíp từ chọn chất liệu, xử lý vải, tạo hiệu ứng đến “pose” chụp hình thần thái.  
+              Đây là dịp học hỏi kinh nghiệm thực chiến và mở rộng network với cộng đồng cosplay chuyên nghiệp.
+            </p>
+          </li>
+      
+          <li>
+            <time datetime="2026-03-30">30/03/2026</time>
+            <p><strong>Cuộc thi cosplay trực tuyến</strong></p>
+            <p>
+              Mô tả chi tiết: Không cần phải di chuyển xa, bạn vẫn có thể “chiến” hết mình với cuộc thi cosplay online này.  
+              Hãy quay video, chụp ảnh bộ trang phục của bạn, kèm theo phần trình diễn ngắn và gửi về ban tổ chức.  
+              Bài dự thi sẽ được đăng tải trên fanpage chính thức, để cộng đồng bình chọn. Top 3 được “thả tim” nhiều nhất sẽ bước vào vòng chung kết livestream,  
+              nơi bạn có thể tương tác trực tiếp với ban giám khảo và người hâm mộ toàn quốc!
+            </p>
+          </li>
+      
+          <li>
+            <time datetime="2026-06-01">01/06/2026</time>
+            <p><strong>Ra mắt manga mới: "Cuộc Phiêu Lưu Của Những Chiến Binh"</strong></p>
+            <p>
+              Mô tả chi tiết: Tác phẩm mới toanh từ tác giả trẻ “đang lên” sẽ khiến bạn chìm đắm trong thế giới kiếm và phép thuật đầy lôi cuốn.  
+              Buổi ra mắt gồm phần đọc thử chương đầu, giao lưu Q&A với tác giả, và bốc thăm trúng thưởng các ấn bản đặc biệt kèm chữ ký.  
+              Nếu bạn là một “mọt” manga chính hiệu, đừng bỏ qua dịp này để trở thành những người đầu tiên khám phá hành trình của các chiến binh huyền thoại!
+            </p>
+          </li>
+      
+          <li>
+            <time datetime="2026-08-20">20/08/2026</time>
+            <p><strong>Buổi giao lưu với các tác giả anime nổi tiếng</strong></p>
+            <p>
+              Mô tả chi tiết: Lần đầu tiên tại Việt Nam, nhiều tác giả anime danh tiếng cùng hội ngộ để gặp gỡ fan hâm mộ.  
+              Chương trình gồm talk show, ký tặng, hỏi đáp và chia sẻ câu chuyện hậu trường thú vị về quá trình tạo nên những bộ anime kinh điển.  
+              Bạn sẽ có cơ hội “face-to-face” với chính người đã vẽ nên thế giới anime mà mình yêu mến. Quả là không thể bỏ lỡ!
+            </p>
+          </li>
+      
+        </ul>
+      </section>
+      
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Anime & Cosplay Community. Tất cả quyền được bảo lưu.</p>
+  </footer>
+
+</body>
+</html>
